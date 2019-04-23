@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<style>
+.navbar .navbar-brand{
+	display : flex;
+	align-items : center;
+}
+</style>
+<nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #D8D8D8;">
+  
+	<a class = "navbar-brand" href="/">	
+	<span class="glyphicon glyphicon-comment"></span>&nbsp;
+		<% if (user) { %>
+			<%= user %> 서애로 가자 
+
+		<% } else { %>
+			서애로 가자 
+		<% } %>
+	</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav navbar-left">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/foods">Food</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/festivals">Festival</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/tours">Tour</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/snss">SNS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/suggestions">Suggest</a>
+      </li>
+      <li class="nav-item nav-right">
+        <a class="nav-link" href="/coupons">Coupon</a>
+      </li>
+     </ul>
+  </div>
+	
+      
+ <div class ="collapse navbar-collapse" id="navbarSupportedContent">
+	<ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          LOGIN
+        </a>
+        <div class="dropdown-menu dropdwon-menu.pull-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/login">LOGIN</a>
+          <a class="dropdown-item" href="/logout">LOGOUT</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/myinfo">MYINFO</a>
+        </div>
+      </li>
+	</ul>
+</div>   
+  
+</nav>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

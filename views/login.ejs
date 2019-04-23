@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<!--
+	Full Motion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>서애로 가자-로그인</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/stylesheets/css/main.css" />
+                  <link rel="shortcut icon" href="/images/favicon.ico">
+                  <link rel="icon" href="/images/favicon.ico">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="/stylesheets/css/main.css" />
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="icon" href="/images/favicon.ico">
+	</head>
+		<!-- Banner -->
+		<!--
+	  To use a video as your background, set data-video to the name of your video without
+	  its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+	  formats to work correctly.
+		-->
+	<header>
+		<% include ./header %>
+	</header>	
+	<body id = "top">	
+		<!-- Main -->
+	        <main>
+        <div class="inner">
+        <!--<div class="container-fluid">-->
+        <!-- login section -->
+        <form action="/login" method="post" name="frm_login" id="frm_login">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="text-center">로그인</h1>
+        </div>
+        <div class="modal-body">
+<a href="/auth/login/facebook" class="button style3 fit">facebook</a>
+        <a href="/auth/login/kakao" class="button style fit">KaKao</a>
+        <a href="/auth/login/naver" class="button style2 fit">Naver</a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </form>
+        <script src="js/login.js"></script>
+        </main>
+
+		<!-- Footer -->
+		                <!-- Footer -->
+                <footer id="footer">
+                        <% include ./footer %>
+                </footer>
+                <% include ./scriptjs %>
+
+	</body>
+</html>
