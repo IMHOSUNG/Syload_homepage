@@ -12,82 +12,53 @@
 		<link rel="stylesheet" href="/stylesheets/css/main.css" />
 		<link rel="shortcut icon" href="/images/favicon.ico">
 		<link rel="icon" href="/images/favicon.ico">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="/stylesheets/css/main.css" />
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="icon" href="/images/favicon.ico">
 	</head>
-	<body id="top">
+	<!-- Banner -->
+	<!--
+	To use a video as your background, set data-video to the name of your video without
+	its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+	formats to work correctly.
+	-->
 	<header>
 		<% include ./header %>
 	</header>
+	<body id = "top">
 	<!-- Main -->
 		<div id="main">
 			<div class="inner">
 
-				<!-- Boxes -->
-				<div class="thumbnails">
+			<!-- Boxes -->
+			<div class="thumbnails">
 
-					<div class="box">
-						<a href="https://youtu.be/Szv3CEQL9og" class="image fit"><img src="https://img.youtube.com/vi/Szv3CEQL9og/hqdefault.jpg" alt="" /></a>
-						<div class="inner">
-							<h3>음식점</h3>
-							<p>서애로 맛집 추천</p>
-							<a href="/foods" class ="button fit" >Watch</a>
-						</div>
-					</div>
 
-					<div class="box">
-						<a href="https://youtu.be/oGP2w1wBZX4" class="image fit"><img src="https://img.youtube.com/vi/oGP2w1wBZX4/hqdefault.jpg" alt="" /></a>
-						<div class="inner">
-							<h3>행사</h3>
-							<p>서애로 근처 행사 정보</p>
-							<a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit" data-poptrox="youtube,800x400">Watch</a>
-						</div>
-
-					</div>
-
-					<div class="box">
-						<a href="https://youtu.be/qcj4JCn4-hY" class="image fit"><img src="https://img.youtube.com/vi/qcj4JCn4-hY/hqdefault.jpg" alt="" /></a>
-						<div class="inner">
-							<h3>관광</h3>
-							<p>관광 명소 추천</p>
-							<a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" data-poptrox="youtube,800x400">Watch</a>
-						</div>
-					</div>
-
-					<div class="box">
-						<a href="https://youtu.be/s6zR2T9vn2c" class = "image fit" ><img src="https://img.youtube.com/vi/Ikx6a0m6owk/hqdefault.jpg"   alt="" /></a>
-						<div class="inner">
-							<h3>SNS</h3>
-							<p>관련 SNS 사이트</p>
-							<a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit" data-poptrox="youtube,800x400">Watch</a>
-						</div>
-					</div>
-
-					<div class="box">
-						<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="https://img.youtube.com/vi/hls9v3XAlUU/hqdefault.jpg" alt="" /></a>
-						<div class="inner">
-							<h3>건의사항</h3>
-							<p>중구에 건의 하고 싶은이야기</p>
-							<a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" data-poptrox="youtube,800x400">Watch</a>
-						</div>
-					</div>
-
-					<div class="box">
-						<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/discount.jpg" alt="" /></a>
-						<div class="inner">
-							<h3>쿠폰</h3>
-							<p>할인 무료 쿠폰</p>
-							<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>
-						</div>
-					</div>
-
+				<% for (var i = 0 ; i < festival.length; i++) { %>
+					<% console.log(festival[i].id) %>
+					<% console.log(festival[i].youtube)%>
+				<div class ="box">
+				<a href="https://youtu.be/<%= festival[i].youtube %>" class="image fit" >
+				<img src="https://img.youtube.com/vi/<%= festival[i].youtube %>/hqdefault.jpg" alt="" /></a>
+				<div class="inner">
+				<h3> <%= festival[i].name %></h3>
+				<p> <%= festival[i].info %> </p>
+				<a href="/festivals/<%= festival[i].id %>" class="button fit" >Watch</a>
 				</div>
+				</div>
+				<% } %>
 
-			</div>
+		</div>
+		</div>
 		</div>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<% include ./footer %>
-		</footer>
-		<% include ./scriptjs %>
+				<!-- Footer -->
+				<!-- Footer -->
+				<footer id="footer">
+				<% include ./footer %>
+				</footer>
+				<% include ./scriptjs %>
+		
 	</body>
 </html>

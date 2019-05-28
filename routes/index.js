@@ -175,7 +175,7 @@ passport.use(new KakaoStrategy({
                 user = {
                         name: profile.username,
                         roles : ['authenticated'],
-                        username: profile.id,
+                        email: profile.id,
                         provider: 'kakao',
                         kakao: profile._json
                 };
@@ -212,10 +212,13 @@ router.get('/auth/login/naver/callback/',
 		expires : new Date(Date.now() + 9000000)
 	});*/
 	req.session.user = user["name"];
+	req.session.domain = user["provider"];
+	req.session.email = user["email"];
 
 	req.session.save(function(){
+	
 		res.redirect('/');
- 	});
+	});
 });
 
 // kakao 로그인
@@ -227,10 +230,11 @@ router.get('/auth/login/kakao/callback',
   passport.authenticate('kakao', {
     failureRedirect: '/login'
   }), function (req, res) {
-	console.log("kakao login success");
 	console.log(user);
 
 	req.session.user = user["name"];
+	req.session.domain = user["provider"];
+	req.session.email = user["email"];
 	req.session.save(function(){
 		res.redirect('/');
 	});
@@ -254,7 +258,9 @@ router.get('/', function (req, res, next) {
 
   res.render('index', {
     title: '서애로',
-    user : req.session.user
+    user : req.session.user,
+    domain : req.session.domain,
+    email : req.session.email
   });
  
 });
@@ -266,7 +272,9 @@ router.get('/login', function (req, res) {
     res.redirect('/')
   } else {
     res.render('login', {
-      user : req.session.user
+      user : req.session.user,
+      domain : req.session.domain,
+      email : req.session.email
     })
   }
 

@@ -2,11 +2,11 @@ module.exports = {
   'secret' :  '',
   'db_info': {
     local: { // localhost
-      host: '',
-      port: ,
-      user: '',
-      password: '',
-      database: ''
+      host: 'localhost',
+      port: 
+      user: 
+      password: 
+      database: 
     },
     real: { // real
       host: '',

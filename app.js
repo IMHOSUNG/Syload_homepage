@@ -12,6 +12,7 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var mysql = require('mysql');
 
+
 //route Info
 var indexRouter = require('./routes/index');
 var foodsRouter = require('./routes/foods');
@@ -22,6 +23,8 @@ var toursRouter = require('./routes/tours');
 var couponRouter = require('./routes/coupons');
 
 var app = express();
+
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -31,7 +34,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-hbs.registerPartials(__dirname + '/views/modal');
+
+
+//#
+//app.use('/board',board);
+//#
+//hbs.registerPartials(__dirname + '/views/modal');
 
 app.use(session({
          keys : 'user_sid',
@@ -42,6 +50,55 @@ app.use(session({
 		maxAge : 1000*60*60
          }
  }));
+
+/*
+
+models.sequelize.sync()
+    .then(function() {
+    console.log('✓ DB connection success.');
+      console.log('  Press CTRL-C to stop\n');
+  })
+  .catch(function(err) {
+    console.error(err);
+    console.log('✗ DB connection error. Please make sure DB is running.');
+    process.exit();
+  });
+
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+//dir path
+app.use(express.static(__dirname));
+ 
+//get
+app.use('/', indexRouter);
+ 
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+*/
+
+/*
+
+//미들웨어 설정
+app.use(morgan('short')) //로그 미들웨어
+app.use(express.static('./public')) //기본 파일 폴더 위치 설정
+app.use(bodyParser.urlencoded({extended:false}))
+//라우트로 분리시켜주기
+var userRouter = require('./routes/user.js')
+
+
+var productRouter = require('./routes/product.js')
+app.use('/suggestions/usr',userRouter)
+app.use('/suggestions/board',productRouter)
+
+
+*/
+
+
+
+
 
 
 app.use(flash());
