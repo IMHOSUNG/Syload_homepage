@@ -23,8 +23,9 @@ https://cheese10yun.github.io/passport-thirdpart-loginl/
 
 을 통해 다음과 같은 더미 정보를 얻을 수 있습니다. 
 
+![Json 예시](/JsonImage/jsonexample.jpg)
 
-
+#### 19-6-20 까지는 더미 정보 입니다. 이후에 효용성 테스트 후 실제 상권 정보를 기입할 예정 입니다. 
 
 ## 예시 홈페이지는 https://www.playinfo.co.kr 입니다. 
 
