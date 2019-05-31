@@ -26,7 +26,9 @@ https://cheese10yun.github.io/passport-thirdpart-loginl/
 ![Json 예시](/JsonImage/jsonexample.jpg)
 
 #### 19-6-20 까지는 더미 정보 입니다. 이후에 효용성 테스트 후 실제 상권 정보를 기입할 예정 입니다. 
-#### JSON 형식에 사용에 대한 예시는 및 DOCUMENT는 추후 제작할 예정입니다.
+##### 프로토 타입의 플랫폼 형식 입니다. 효용성 테스트가 완료 되면 여러 분산 서버와 게이트 웨이 등을 통해 REST API 를 구축할 예정입니다.
+##### JSON 형식에 사용에 대한 예시 및 사용 문서는 추후 제작할 예정입니다.
+
 
 ## 예시 홈페이지는 https://www.playinfo.co.kr 입니다. 
 
